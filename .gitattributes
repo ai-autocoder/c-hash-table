@@ -1,0 +1,8 @@
+# Keep line endings LF so files work cleanly when compiled/run under WSL/Linux.
+# (Windows editors default to CRLF, which trips up shell scripts and Makefiles.)
+* text=auto eol=lf
+*.c    text eol=lf
+*.h    text eol=lf
+*.sh   text eol=lf
+Makefile text eol=lf
+*.md   text eol=lf
