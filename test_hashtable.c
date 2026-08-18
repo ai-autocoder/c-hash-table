@@ -55,7 +55,8 @@ int main(void){
 
 	/* 4. the load-bearing one. "A0" (65+48=113) lands in bucket 1 too, but was never
 	   inserted, so a lookup has to walk the whole chain and then give up. without this
-	   the suite still passes if get() ignores the key and returns table[hash]->user. */
+	   the suite still passes if get()'s not-found path returns table[hash]->user
+	   instead of NULL. */
 	assert(hash_function("A0", TABLE_SIZE) == BUCKET);
 	assert(get("A0") == NULL);
 	printf("4 ok  uninserted colliding key \"A0\" returns NULL\n");
